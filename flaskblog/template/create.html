@@ -1,0 +1,47 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flaskr</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+{{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
+<div class="topnav">
+ <a href ="/" class="mia"> Aryan Sood </a>
+<a href ="{{ url_for('blog.index') }}"> Home </a>
+<a href="/register"> Register </a>
+<a href="/login"> Login </a>
+<a href="/logout" class="mia5"> Logout</a>
+<a href="#"> About </a>
+
+
+</div>
+
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  <center>
+   <form method="post">
+    <div>
+    <label for="" class="labetitle">Title:</label>
+    <input name="title" id="title" class="maintitle" value="{{ request.form['title'] }}" required>
+    </div>
+    <hr  width="70%" style="border-width:0.7px;">
+    
+    <div>
+      <label for="description" class="labesubtitle">Description:</label>
+    <textarea name="description" id="description" required> </textarea>
+    <hr  width="70%" style="border-width:0.7px;">
+    <label for="imageurl" class="labelimageurl">Image url:</label>
+    <textarea name="imageurl" id="imageurl"> {{ request.form['body'] }} </textarea>
+    
+  </div>
+   <hr  width="70%" style="border-width:0.5px;">
+ </br>
+    {{ ckeditor.create(name = 'content') }}
+  
+    <input type="submit" value="Save">
+
+  </form>
+  </center>
+  
+ 
+
+</section>

@@ -1,0 +1,11 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    
+
+    {{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
+    {{ super() }}
+    {{ ckeditor.create(name = 'content') }}
+    
+    
+{% endblock %}

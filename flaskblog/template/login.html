@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <div class="lol">
+  <form method="post">
+  <img src="https://cdn5.vectorstock.com/i/1000x1000/44/89/business-man-icon-abstract-face-office-people-vector-8624489.jpg"> 
+                             
+<input type="text" name="name" placeholder="Name" />
+   
+  <input type="password" name="password" placeholder="Password" />
+
+  <button type="submit">Log In</button>
+   
+
+   <a href="register">Create account</a>
+</form>
+</div>
+{% endblock %}

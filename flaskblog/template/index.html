@@ -1,0 +1,80 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flaskr</title>
+<body>
+  {{ ckeditor.load(custom_url=url_for('static', filename='ckeditor/ckeditor.js')) }}
+<section class="content">
+<link rel="stylesheet" href="{{ url_for('static', filename='nav.css') }}">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sestyle.css') }}">
+    <link href="static/ckeditor/plugins/codesnippet/lib/highlight/styles/rainbow.css" rel="stylesheet">
+    <script src="static/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+
+<div class="topnav">
+<a href ="/" class="mia"> Aryan Sood </a>
+<a href ="{{ url_for('blog.index') }}" class="mia1"> Home </a>
+<a href="/register" class="mia2"> Register </a>
+<a href="/login" class="mia3"> Login </a>
+<a href="/create" class="mia4"> Create</a>
+<a href="/logout" class="mia5"> Logout</a>
+<a href=""> About </a>
+
+</div>
+
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+
+  <div class="content123 clearfix">
+    <div class="main-content">
+      <h1 class="recent-post-title">Projects</h1>
+      {% for post in posts %}
+      <div class="postone clearfix">
+        <img src="{{ post.imageurl | safe }}" class="imgone">
+        <div class="postpreview">
+          <h1><a href="posterview/{{ post.id }}"> {{ post.title }}</a></h1>
+          <i class="userone"> {{ post.user.name }}</i>
+          &nbsp;
+          <i class="clandar1"> {{ post.post_time.strftime('%b %d, %Y') }}</i>
+          <p class="preview-text">
+            {{ post.description | safe }}
+          </p>
+          <a href="posterview/{{ post.id }}" class="btno read-more"> Read More  </a>
+        </div>
+        
+      </div>
+      {% endfor %}
+    </div>
+
+
+    <div class = "sidebar">
+      <div class="section search">
+        <h2 class="section title" style="margin-bottom: -19px;margin-top: -14px;">Search</h2>
+        <form action="/" methods="post">
+            <input type="text" name="search-term" class="text-input" placeholder="Search...">
+
+
+        </form>
+
+      </div>
+      <div class="section topics">
+      <h2 class="section title" style="margin-bottom: -19px;margin-top: -14px;"> Archive </h2>
+      <ul>
+        {% for date in dates %}
+        <li><a href="archive/{{ date.date_time.year }}/{{ date.date_time.month }}">{{ date.date_time.strftime('%b  %Y') }}</a> </li>
+        {% endfor %}
+      </ul>
+    </div>
+     </div>
+  </div>
+  {% block content %}{% endblock %}
+
+  
+</section>
+</body>

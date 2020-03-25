@@ -1,0 +1,122 @@
+/* Add a black background color to the top navigation */
+body{
+  margin: 0;
+  background-color:white/*#f5f5f5*//*#F8F8F8*/;
+}
+.topnav {
+  background-color:   #F0F0F0  /*#F8F8F8*/  /*#4caf50*//*#027b93*/;
+  overflow: hidden;
+  margin : 0;
+  border-bottom-color: #E8E8E8;
+  border-bottom-style: solid;
+  border-bottom-width: 0.01px; 
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  
+}
+.Aryan{
+  float: left;
+  
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color:  #696969 !important/*#f2f2f2*/;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+.topnav .mia
+{
+  margin-left: 81px;
+}
+.topnav .mia:hover
+{
+  background-color: #F0F0F0;
+  color:    #696969 !important;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color:#D3D3D3;
+  color:#f2f2f2 !important;
+}
+
+.maintitle 
+{
+  margin-top: 100px;
+
+}
+.labetitle
+{
+  padding-right: 100px;
+}
+.labesubtitle
+{
+  padding-right: 61px;
+}
+.labelimageurl
+{
+  padding-right: 71px;
+}
+blockquote
+{
+  font-style: italic;
+  font-size: 16px;
+  margin-left: 32px;
+  font-family: Consolas, "Times New Roman", Verdana;
+  border-left: 4px solid #CCC;
+  padding-left: 8px;
+}
+article
+{
+  width: auto;
+  margin-right: 45px; 
+  height: 'auto';
+  margin-left: 100px;
+ 
+}
+.title
+{
+   color:#606060;
+   font-size:30px;
+}
+.useo
+{
+  margin-top: -20px;
+}
+.linka
+{
+  text-align: center;
+  color: #719BE6;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.linka:hover {
+  text-decoration: underline;
+}
+h1,h2,h3,h4,h5,h6
+{
+  font-family: 'Candal', serif;
+  color: #444;
+  margin: 5px;
+}
+a 
+{
+  text-decoration: none;
+  color:inherit;
+}
+.content123 a:hover
+{
+  color:#006669;
+}
+
+
+
+
+  
+ 
+
