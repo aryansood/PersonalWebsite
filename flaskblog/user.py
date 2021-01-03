@@ -21,7 +21,7 @@ def register():
 			error = 'username is required'
 		if not password:
 			error = 'password is required'
-		if secret_pass != '60e7a42f554fdf2db472294bcf8ebc3b':
+		if secret_pass != '':
 			error = 'Secret code is wrong'
 
 		if user:
